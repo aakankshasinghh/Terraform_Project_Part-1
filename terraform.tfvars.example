@@ -1,0 +1,21 @@
+# Copy this file to terraform.tfvars (which should be gitignored) and fill in real values.
+# Never commit real secrets — db_password should come from an env var or a secrets manager
+# in a real deployment: export TF_VAR_db_password="..."
+
+aws_region   = "ap-south-1"
+project_name = "devops-assessment"
+
+db_engine        = "postgres"
+db_name          = "appdb"
+db_username      = "app_admin"
+db_password      = "changeme-do-not-commit"
+
+db_instance_class          = "db.t3.micro"
+db_allocated_storage       = 20
+db_backup_retention_period = 7
+db_deletion_protection     = false
+db_multi_az                = false
+
+container_image   = "nginx:latest"
+container_port    = 80
+ecs_desired_count  = 1
